@@ -3,7 +3,7 @@ let money = 100000,
   addExpenses,
   deposit,
   mission = 1000000,
-  period;
+  period = 10;
 
 alert("дарова");
 console.log("меня видно");
