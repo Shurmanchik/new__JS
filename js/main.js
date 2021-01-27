@@ -7,3 +7,4 @@ let money = 100000,
 
 alert("дарова");
 console.log("меня видно");
+console.log("коммиты да да");
