@@ -1,5 +1,5 @@
 let money = 100000,
-  income,
+  income = 10000,
   addExpenses,
   deposit,
   mission = 1000000,
