@@ -2,7 +2,7 @@ let money = 100000,
   income,
   addExpenses,
   deposit,
-  mission,
+  mission = 1000000,
   period;
 
 alert("дарова");
