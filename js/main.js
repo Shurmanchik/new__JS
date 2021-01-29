@@ -17,12 +17,7 @@ showTypeOf(money);
 showTypeOf(income);
 showTypeOf(deposit);
 
-console.log("период: " + period + " месяцев");
-console.log("Цель заработать " + mission + " руб");
-
 addExpenses = addExpenses.toLowerCase().split(", ");
-console.log(addExpenses);
-console.log(money % 30);
 
 let oblExpenses = prompt("Какие обязательные ежемесячные расходы у вас есть?"),
   costExpenses = +prompt("Во сколько это обойдется?"),
@@ -32,11 +27,6 @@ let oblExpenses = prompt("Какие обязательные ежемесячн
   budgetDay = budgetMonth / 30;
 
 console.log("доход за месяц:", budgetMonth + " рублей");
-console.log(
-  "цель будет достигнута через:",
-  Math.ceil(mission / budgetMonth) + " месяцев"
-);
-console.log("бюджет на день:", Math.floor(budgetDay) + " рублей");
 
 let getStatusIncome = function () {
   if (budgetDay > 800) {
@@ -49,5 +39,22 @@ let getStatusIncome = function () {
     return "Что то пошло не так";
   }
 };
-
 console.log(getStatusIncome());
+
+const getExpensesMonth = function () {
+  return costExpenses + costExpenses2;
+};
+
+const getAccumulatedMonth = function () {
+  return money - getExpensesMonth();
+};
+
+const getTargetMonth = function () {
+  return mission / getAccumulatedMonth();
+};
+let accumulatedMonth = getAccumulatedMonth;
+
+console.log(
+  "цель будет достигнута через:",
+  Math.ceil(getTargetMonth()) + " месяцев"
+);
