@@ -1,3 +1,5 @@
+"use strict";
+
 function outputMassage(name, age) {
   /* name, age парметры функции*/
   console.log("Hello " + name);
@@ -51,19 +53,20 @@ function mult(a, b) {
 doNum(3, 5, mult);
 
 // callback функции всегда передается в другую функцию и выполняется после той ф-ции
-function one(callback) {
-  console.log("Делаем запрос на сервер");
-  setTimeout(function () {
-    console.log("Получаем запрос от сервера");
-    callback();
-  }, 1000);
-}
 
-function two() {
-  console.log("Выводим на страницу");
-}
+// function one(callback) {
+//   console.log("Делаем запрос на сервер");
+//   setTimeout(function () {
+//     console.log("Получаем запрос от сервера");
+//     callback();
+//   }, 1000);
+// }
 
-one(two);
+// function two() {
+//   console.log("Выводим на страницу");
+// }
+
+// one(two);
 
 // Деторменированная ф-ция зависит только от входных данных
 // чистая ф-ия деторменированная и без побочных эффектов! Она зависти только от входных данных
@@ -78,3 +81,31 @@ console.log(foo(2, 3));
 console.log(foo(1, 3));
 console.log(foo(2, 3));
 console.log(foo(2, 3));
+
+// область видимости
+
+let y = 10;
+
+function one() {
+  let y = 4;
+
+  function two() {
+    let y = 7;
+
+    console.log(y);
+  }
+  two();
+}
+
+one();
+
+// Замыкание
+function funcMath(a) {
+  return function (b) {
+    console.log(a * b);
+  };
+}
+
+const mathPow = funcMath(10);
+mathPow(5);
+console.dir(mathPow);
