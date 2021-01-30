@@ -6,13 +6,12 @@ let money,
   mission = 1000000,
   period = 10;
 
-let start = function () {
-  money = prompt("Ваш месячный доход?", 100000);
-
-  while (isNaN(money) || money === "" || money === null) {
+const start = function () {
+  do {
     money = prompt("Ваш месячный доход?", 100000);
-  }
+  } while (isNaN(money) || money === "" || money === null);
 };
+
 start();
 
 let showTypeOf = function (data) {
@@ -26,7 +25,8 @@ showTypeOf(deposit);
 let expenses1, expenses2;
 
 const getExpensesMonth = function () {
-  let sum = 0;
+  let sum = 0,
+    sumExpenses = 0;
 
   for (let i = 0; i < 2; i++) {
     if (i === 0) {
@@ -38,11 +38,17 @@ const getExpensesMonth = function () {
         "туалетная бумага"
       );
     }
-    sum += +prompt("Во сколько это обойдется?", 5000);
+
+    do {
+      sumExpenses = prompt("Во сколько это обойдется?", 5000);
+    } while (isNaN(sumExpenses) || sumExpenses === "" || sumExpenses === null);
+
+    sum += +sumExpenses;
   }
 
   return sum;
 };
+
 let expensesAmount = getExpensesMonth();
 
 console.log("Расходы за месяц: " + expensesAmount + " рублей");
@@ -64,7 +70,7 @@ console.log(
 
 let budgetDay = getAccumulatedMonth() / 30;
 
-let getStatusIncome = function () {
+const getStatusIncome = function () {
   if (budgetDay > 800) {
     return "Высокий уровень дохода";
   } else if (budgetDay > 300 && budgetDay < 800) {
