@@ -64,8 +64,7 @@ const getTargetMonth = function () {
 
 if (getTargetMonth() < 0) {
   console.log("Цель не будет достигнута");
-}
-else (getTargetMonth() > 0) {
+} else {
   console.log(
     "цель будет достигнута через:",
     Math.ceil(getTargetMonth()) + " месяцев"
