@@ -61,12 +61,18 @@ console.log("доход за месяц:", getAccumulatedMonth() + " рубле�
 const getTargetMonth = function () {
   return mission / getAccumulatedMonth();
 };
-let accumulatedMonth = getAccumulatedMonth;
 
-console.log(
-  "цель будет достигнута через:",
-  Math.ceil(getTargetMonth()) + " месяцев"
-);
+if (getTargetMonth() < 0) {
+  console.log("Цель не будет достигнута");
+}
+if (getTargetMonth() > 0) {
+  console.log(
+    "цель будет достигнута через:",
+    Math.ceil(getTargetMonth()) + " месяцев"
+  );
+}
+
+let accumulatedMonth = getAccumulatedMonth;
 
 let budgetDay = getAccumulatedMonth() / 30;
 
