@@ -143,8 +143,34 @@ appData.addExpenses.forEach(function (item, i, arr) {
 });
 console.log(appData.addExpenses);
 
-// for (let key in appData) {
-//   console.log(
-//     "Наша программа включает в себя данные: " + key + ": " + appData[key]
-//   );
-// }
+for (let key in appData) {
+  console.log(
+    "Наша программа включает в себя данные: " + key + ": " + appData[key]
+  );
+}
+
+let btnStart = document.querySelector("#start");
+
+// console.log(btnStart);
+
+let btnIncomeAdd = document.querySelectorAll("button")[0],
+  btnExpensesAdd = document.querySelectorAll("button")[1],
+  btnDepositCheck = document.querySelector("#deposit-check"),
+  incomeItem = document.querySelectorAll(".additional_income-item"),
+  budgetMonthValue = document.querySelector(".budget_month-value"),
+  budgetDayValue = document.querySelector(".budget_day-value"),
+  expensesMonthValue = document.querySelector(".expenses_month-value"),
+  additionalIncomeValue = document.querySelector(".additional_income-value"),
+  additionalExpensesValue = document.querySelector(
+    ".additional_expenses-value"
+  ),
+  incomePeriodValue = document.querySelector(".income_period-value"),
+  targetMonthValue = document.querySelector(".target_month-value"),
+  salaryAmount = document.querySelector(".salary-amount"),
+  incomeItems = document.querySelector(".income-items"),
+  additionalExpensesItem = document.querySelector(".additional_expenses-item"),
+  additionalIncomeItem = document.querySelector(".additional_income-item"),
+  expensesTitle = document.querySelector(".expenses-title"),
+  expensesAmount = document.querySelector(".expenses-amount"),
+  targetAmount = document.querySelector(".target-amount"),
+  periodSelect = document.querySelector(".period-select");
